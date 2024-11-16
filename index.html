@@ -16,7 +16,7 @@
 
     header {
       padding: 20px;
-      font-size: 2em;
+      font-size: 3em;
       font-weight: bold;
       color: #ff69b4;
       text-shadow: 2px 2px #ff87c3;
@@ -26,12 +26,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      padding: 10px;
+      gap: 20px;
+      padding: 20px;
     }
 
     .gallery img {
-      max-width: 100%;
+      max-width: 300px;
+      max-height: 300px;
+      width: auto;
       height: auto;
       border-radius: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -39,13 +41,13 @@
     }
 
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
     footer {
       padding: 20px;
-      font-size: 1em;
+      font-size: 1.5em;
       color: #ff69b4;
     }
 
@@ -77,30 +79,6 @@
     .music-controls button:hover {
       background-color: #ff87c3;
     }
-
-    /* Media Queries for Mobile Devices */
-    @media (max-width: 768px) {
-      header {
-        font-size: 1.5em;
-      }
-
-      .gallery {
-        gap: 5px;
-      }
-
-      .gallery img {
-        max-width: 90%; /* Prevent images from being too large on small screens */
-      }
-
-      footer {
-        font-size: 0.9em;
-      }
-
-      .music-controls button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-      }
-    }
   </style>
 </head>
 <body>
@@ -129,3 +107,4 @@
   </footer>
 </body>
 </html>
+
