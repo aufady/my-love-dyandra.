@@ -24,17 +24,15 @@
 
     .gallery {
       display: flex;
-      flex-wrap: nowrap; /* Foto akan berjajar ke samping */
-      overflow-x: auto; /* Tambahkan scroll horizontal */
-      gap: 20px;
-      padding: 20px;
+      justify-content: space-between; /* Atur jarak antar gambar */
+      align-items: center; /* Pusatkan gambar secara vertikal */
+      padding: 10px;
     }
 
     .gallery img {
-      max-width: 100%;
+      width: 30%; /* Setiap gambar mengambil 30% dari lebar layar */
       height: auto;
-      flex-shrink: 0;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -77,6 +75,12 @@
 
     .music-controls button:hover {
       background-color: #ff87c3;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 28%; /* Ukuran lebih kecil untuk layar sempit */
+      }
     }
   </style>
 </head>
