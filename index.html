@@ -12,6 +12,7 @@
       background: linear-gradient(to bottom right, #ff9ad5, #fcb8e2);
       color: white;
       text-align: center;
+      overflow: hidden; /* Menghindari scroll akibat salju */
     }
 
     header {
@@ -83,6 +84,38 @@
         max-height: 150px; /* Ukuran lebih kecil untuk layar sempit */
       }
     }
+
+    /* Efek Salju */
+    .snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Salju tidak akan memengaruhi klik */
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -109,5 +142,18 @@
       "With you, every moment feels like a beautiful eternity. 💕"
     </div>
   </footer>
+
+  <!-- Salju -->
+  <div class="snow">
+    <div class="snowflake" style="left: 10%; font-size: 1.5em; animation-duration: 10s;">❄</div>
+    <div class="snowflake" style="left: 20%; font-size: 1em; animation-duration: 7s;">❄</div>
+    <div class="snowflake" style="left: 30%; font-size: 1.8em; animation-duration: 12s;">❄</div>
+    <div class="snowflake" style="left: 40%; font-size: 0.8em; animation-duration: 5s;">❄</div>
+    <div class="snowflake" style="left: 50%; font-size: 1.2em; animation-duration: 9s;">❄</div>
+    <div class="snowflake" style="left: 60%; font-size: 1.4em; animation-duration: 11s;">❄</div>
+    <div class="snowflake" style="left: 70%; font-size: 1em; animation-duration: 6s;">❄</div>
+    <div class="snowflake" style="left: 80%; font-size: 1.6em; animation-duration: 13s;">❄</div>
+    <div class="snowflake" style="left: 90%; font-size: 1em; animation-duration: 8s;">❄</div>
+  </div>
 </body>
 </html>
