@@ -24,17 +24,16 @@
 
     .gallery {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap; /* Foto akan berjajar ke samping */
+      overflow-x: auto; /* Tambahkan scroll horizontal */
       gap: 20px;
       padding: 20px;
     }
 
     .gallery img {
-      max-width: 300px;
-      max-height: 300px;
-      width: auto;
+      max-width: 100%;
       height: auto;
+      flex-shrink: 0;
       border-radius: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
@@ -107,4 +106,3 @@
   </footer>
 </body>
 </html>
-
