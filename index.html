@@ -12,7 +12,7 @@
       background: linear-gradient(to bottom right, #ff9ad5, #fcb8e2);
       color: white;
       text-align: center;
-      overflow: hidden; /* Menghindari scroll akibat salju */
+      overflow: hidden; /* Menghindari scroll akibat hujan love */
     }
 
     header {
@@ -85,24 +85,24 @@
       }
     }
 
-    /* Efek Salju */
-    .snow {
+    /* Efek Hujan Love */
+    .hearts {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none; /* Salju tidak akan memengaruhi klik */
+      pointer-events: none; /* Hati tidak akan memengaruhi klik */
       z-index: 1000;
       overflow: hidden;
     }
 
-    .snowflake {
+    .heart {
       position: absolute;
       top: -10px;
-      color: white;
-      font-size: 1em;
-      opacity: 0.8;
+      color: #ff69b4;
+      font-size: 1.5em;
+      opacity: 0.9;
       animation: fall linear infinite;
     }
 
@@ -119,7 +119,7 @@
   </style>
 </head>
 <body>
-  <header>🎀 A Memory of Forever with You 🎀</header>
+  <header>💖 A Memory of Forever with You 💖</header>
 
   <div class="gallery">
     <img src="images/dyandra.jpg" alt="Dyandra 1">
@@ -143,17 +143,17 @@
     </div>
   </footer>
 
-  <!-- Salju -->
-  <div class="snow">
-    <div class="snowflake" style="left: 10%; font-size: 1.5em; animation-duration: 10s;">❄</div>
-    <div class="snowflake" style="left: 20%; font-size: 1em; animation-duration: 7s;">❄</div>
-    <div class="snowflake" style="left: 30%; font-size: 1.8em; animation-duration: 12s;">❄</div>
-    <div class="snowflake" style="left: 40%; font-size: 0.8em; animation-duration: 5s;">❄</div>
-    <div class="snowflake" style="left: 50%; font-size: 1.2em; animation-duration: 9s;">❄</div>
-    <div class="snowflake" style="left: 60%; font-size: 1.4em; animation-duration: 11s;">❄</div>
-    <div class="snowflake" style="left: 70%; font-size: 1em; animation-duration: 6s;">❄</div>
-    <div class="snowflake" style="left: 80%; font-size: 1.6em; animation-duration: 13s;">❄</div>
-    <div class="snowflake" style="left: 90%; font-size: 1em; animation-duration: 8s;">❄</div>
+  <!-- Hujan Love -->
+  <div class="hearts">
+    <div class="heart" style="left: 10%; font-size: 1.5em; animation-duration: 8s;">💖</div>
+    <div class="heart" style="left: 20%; font-size: 1em; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 30%; font-size: 2em; animation-duration: 10s;">💖</div>
+    <div class="heart" style="left: 40%; font-size: 1.2em; animation-duration: 7s;">💖</div>
+    <div class="heart" style="left: 50%; font-size: 1.6em; animation-duration: 9s;">💖</div>
+    <div class="heart" style="left: 60%; font-size: 1.4em; animation-duration: 11s;">💖</div>
+    <div class="heart" style="left: 70%; font-size: 1.1em; animation-duration: 5s;">💖</div>
+    <div class="heart" style="left: 80%; font-size: 1.8em; animation-duration: 12s;">💖</div>
+    <div class="heart" style="left: 90%; font-size: 1.2em; animation-duration: 6s;">💖</div>
   </div>
 </body>
 </html>
