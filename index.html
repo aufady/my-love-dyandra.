@@ -30,13 +30,11 @@
     }
 
     .gallery img {
-      width: 30%; /* Setiap gambar mengambil 30% dari lebar layar */
-      height: auto;
+      max-height: 300px; /* Tetapkan tinggi maksimum untuk semua gambar */
+      width: auto; /* Pertahankan rasio aspek gambar */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
-      object-fit: cover; /* Pastikan gambar tidak terdistorsi */
-      aspect-ratio: 3 / 4; /* Menjaga proporsi gambar 3:4 */
     }
 
     .gallery img:hover {
@@ -81,7 +79,7 @@
 
     @media (max-width: 600px) {
       .gallery img {
-        width: 28%; /* Ukuran lebih kecil untuk layar sempit */
+        max-height: 150px; /* Ukuran lebih kecil untuk layar sempit */
       }
     }
   </style>
