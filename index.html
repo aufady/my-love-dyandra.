@@ -24,14 +24,15 @@
 
     .gallery {
       display: flex;
-      justify-content: space-between; /* Atur jarak antar gambar */
-      align-items: center; /* Pusatkan gambar secara vertikal */
+      justify-content: center; /* Pusatkan semua gambar */
+      align-items: center; /* Rata tengah secara vertikal */
+      gap: 10px; /* Jarak kecil antar gambar */
       padding: 10px;
     }
 
     .gallery img {
-      max-height: 300px; /* Tetapkan tinggi maksimum untuk semua gambar */
-      width: auto; /* Pertahankan rasio aspek gambar */
+      max-height: 300px; /* Tinggi gambar seragam */
+      width: auto; /* Rasio gambar tetap */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
