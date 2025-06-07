@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Book for Dyandra 💕</title>
+  <title>Love You Dyandra 💕</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Comic Sans MS', sans-serif;
       background: linear-gradient(to bottom right, #ff9ad5, #fcb8e2);
       color: white;
@@ -16,110 +17,182 @@
 
     header {
       padding: 20px;
-      font-size: 2.5em;
+      font-size: 3em;
+      font-weight: bold;
       color: #ff69b4;
-      text-shadow: 1px 1px #ff87c3;
+      text-shadow: 2px 2px #ff87c3;
     }
 
-    .photo-book {
+    .book-container {
       position: relative;
-      height: 400px;
+      height: 350px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .photo-book img {
+    .photo-page {
+      display: none;
+      width: 100%;
+    }
+
+    .photo-page.active {
+      display: block;
+    }
+
+    .photo-page img {
       max-height: 300px;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      transition: opacity 0.5s ease-in-out;
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
     }
 
     .nav-buttons {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
-    button {
+    .nav-buttons button {
       background-color: #ff69b4;
       color: white;
       border: none;
       padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 10px;
-      font-size: 1em;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1em;
+      margin: 0 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    button:hover {
+    .nav-buttons button:hover {
       background-color: #ff87c3;
     }
 
     footer {
-      margin-top: 30px;
-      font-size: 1.2em;
+      padding: 20px;
+      font-size: 1.5em;
+      color: #ff69b4;
     }
 
     .footer-message {
-      background-color: white;
+      background-color: #fff;
       color: #ff69b4;
-      border-radius: 15px;
-      padding: 10px 20px;
+      border-radius: 10px;
+      padding: 10px;
       display: inline-block;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .music-controls {
+      margin-top: 20px;
+    }
+
+    .music-controls button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+    }
+
+    .music-controls button:hover {
+      background-color: #ff87c3;
+    }
+
+    @media (max-width: 600px) {
+      .photo-page img {
+        max-height: 150px;
+      }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      top: -10px;
+      color: #ff69b4;
+      font-size: 1.5em;
+      opacity: 0.9;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
+  <header>🎀 A Memory of Forever with You 🎀 </header>
 
-  <header>📖 My Love Book for Dyandra 💕</header>
-
-  <div class="photo-book">
-    <img id="photo" src="images/dyandra.jpg" alt="Dyandra Book Page" />
+  <div class="book-container">
+    <div class="photo-page active"><img src="images/dyandra.jpg" alt="Dyandra 1" /></div>
+    <div class="photo-page"><img src="images/Photois_87202410251539.jpg" alt="Dyandra 2" /></div>
+    <div class="photo-page"><img src="images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg" alt="Dyandra 3" /></div>
+    <div class="photo-page"><img src="images/Photois_87202412242050.jpg" alt="Dyandra 4" /></div>
+    <div class="photo-page"><img src="images/20250215_190233_385.jpg" alt="Dyandra 5" /></div>
+    <div class="photo-page"><img src="images/20250510_160406_214.jpg" alt="Dyandra 6" /></div>
   </div>
 
   <div class="nav-buttons">
-    <button onclick="prevPhoto()">Previous</button>
-    <button onclick="nextPhoto()">Next</button>
+    <button onclick="changePage(-1)">Previous</button>
+    <button onclick="changePage(1)">Next</button>
+  </div>
+
+  <div class="music-controls">
+    <audio id="bg-music" loop>
+      <source src="music/ssstik.io_1737873366668.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <button onclick="document.getElementById('bg-music').play()">Play Music</button>
+    <button onclick="document.getElementById('bg-music').pause()">Pause Music</button>
   </div>
 
   <footer>
     <div class="footer-message">
-      "Setiap halaman, selalu tentang kamu... 💗"
+      "With you, every moment feels like a beautiful eternity. 💕"
     </div>
   </footer>
 
+  <div class="hearts">
+    <div class="heart" style="left: 10%; font-size: 1.5em; animation-duration: 8s;">💗</div>
+    <div class="heart" style="left: 20%; font-size: 1em; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 30%; font-size: 2em; animation-duration: 10s;">🌹</div>
+    <div class="heart" style="left: 40%; font-size: 1.2em; animation-duration: 7s;">💖</div>
+    <div class="heart" style="left: 50%; font-size: 1.6em; animation-duration: 9s;">💗</div>
+    <div class="heart" style="left: 60%; font-size: 1.4em; animation-duration: 11s;">🍭</div>
+    <div class="heart" style="left: 70%; font-size: 1.1em; animation-duration: 5s;">🍭</div>
+    <div class="heart" style="left: 80%; font-size: 1.8em; animation-duration: 12s;">🌹</div>
+    <div class="heart" style="left: 90%; font-size: 1.2em; animation-duration: 6s;">💐</div>
+  </div>
+
   <script>
-    const photos = [
-      "images/dyandra.jpg",
-      "images/Photois_87202410251539.jpg",
-      "images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg",
-      "images/20250510_160406_214.jpg",
-      "images/Photois_87202412242050.jpg",
-      "images/20250215_190233_385.jpg"
-    ];
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.photo-page');
 
-    let currentIndex = 0;
-
-    function showPhoto(index) {
-      const photo = document.getElementById("photo");
-      photo.style.opacity = 0;
-      setTimeout(() => {
-        photo.src = photos[index];
-        photo.style.opacity = 1;
-      }, 200);
-    }
-
-    function nextPhoto() {
-      currentIndex = (currentIndex + 1) % photos.length;
-      showPhoto(currentIndex);
-    }
-
-    function prevPhoto() {
-      currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-      showPhoto(currentIndex);
+    function changePage(direction) {
+      pages[currentPage].classList.remove('active');
+      currentPage = (currentPage + direction + pages.length) % pages.length;
+      pages[currentPage].classList.add('active');
     }
   </script>
 </body>
