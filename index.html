@@ -34,6 +34,15 @@
       padding: 20px;
     }
 
+    .photo-date {
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #fff;
+      margin-top: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
     .photo-page {
       display: none;
       width: 100%;
@@ -144,19 +153,30 @@
 <body>
   <header>🎀 A Memory of Forever with You 🎀 </header>
 
-  <div class="book-container">
-    <div class="photo-page active"><img src="images/dyandra.jpg" alt="Dyandra 1" /></div>
-    <div class="photo-page"><img src="images/Photois_87202410251539.jpg" alt="Dyandra 2" /></div>
-    <div class="photo-page"><img src="images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg" alt="Dyandra 3" /></div>
-    <div class="photo-page"><img src="images/20250510_160406_214.jpg" alt="Dyandra 6" /></div>
-    <div class="photo-page"><img src="images/Photois_87202412242050.jpg" alt="Dyandra 4" /></div>
-    <div class="photo-page"><img src="images/20250215_190233_385.jpg" alt="Dyandra 5" /></div>
-  </div>
-
-  <div class="nav-buttons">
-    <button onclick="changePage(-1)">Previous</button>
-    <button onclick="changePage(1)">Next</button>
-  </div>
+<div class="photo-page active">
+  <img src="images/dyandra.jpg" alt="Dyandra 1" />
+  <p class="photo-date">2024.04.05</p>
+</div>
+<div class="photo-page">
+  <img src="images/Photois_87202410251539.jpg" alt="Dyandra 2" />
+  <p class="photo-date">2024.10.25</p>
+</div>
+<div class="photo-page">
+  <img src="images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg" alt="Dyandra 3" />
+  <p class="photo-date">2024.11.11</p>
+</div>
+<div class="photo-page">
+  <img src="images/Photois_87202412242050.jpg" alt="Dyandra 4" />
+  <p class="photo-date">2024.12.24</p>
+</div>
+<div class="photo-page">
+  <img src="images/20250215_190233_385.jpg" alt="Dyandra 5" />
+  <p class="photo-date">2025.02.15</p>
+</div>
+<div class="photo-page">
+  <img src="images/20250510_160406_214.jpg" alt="Dyandra 6" />
+  <p class="photo-date">2025.05.10</p>
+</div>
 
   <div class="music-controls">
     <audio id="bg-music" loop>
