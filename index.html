@@ -3,107 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love You Dyandra 💗</title>
+  <title>Love You Dyandra 💕</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Comic Sans MS', sans-serif;
-      background: linear-gradient(to bottom right, #ffccdd, #ffc1e3);
-      color: #ff69b4;
-      overflow-x: hidden;
+      background: linear-gradient(to bottom right, #ff9ad5, #fcb8e2);
+      color: white;
+      text-align: center;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     header {
       padding: 20px;
-      font-size: 2em;
-      text-align: center;
-      background-color: #fff0f5;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 3em;
+      font-weight: bold;
+      color: #ff69b4;
+      text-shadow: 2px 2px #ff87c3;
     }
 
-    .photo {
-      width: 100%;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 10px;
-      box-sizing: border-box;
+    .book-container {
+      position: relative;
+      min-height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
     }
 
-    .photo img {
+    .photo-page {
+      display: none;
       width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-page.active {
       display: block;
     }
 
-    .music-controls {
-      text-align: center;
+    .photo-page img {
+      width: 90vw;
+      max-height: 80vh;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+      margin: 0 auto;
+    }
+
+    .nav-buttons {
       margin-top: 10px;
+    }
+
+    .nav-buttons button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      margin: 0 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-buttons button:hover {
+      background-color: #ff87c3;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 1.5em;
+      color: #ff69b4;
+    }
+
+    .footer-message {
+      background-color: #fff;
+      color: #ff69b4;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .music-controls {
+      margin-top: 20px;
     }
 
     .music-controls button {
       background-color: #ff69b4;
       color: white;
       border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin: 5px;
-      font-size: 1em;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 1em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
     }
 
     .music-controls button:hover {
       background-color: #ff87c3;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 1em;
-      color: #fff;
-      background-color: #ff69b4;
-      margin-top: 30px;
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+      overflow: hidden;
     }
 
-    footer .footer-message {
-      background-color: #fff;
+    .heart {
+      position: absolute;
+      top: -10px;
       color: #ff69b4;
-      padding: 10px 16px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-size: 1.5em;
+      opacity: 0.9;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
+  <header>🎀 A Memory of Forever with You 🎀 </header>
 
-  <header>📖 Buku Cerita Dyandraa 💗</header>
+  <div class="book-container">
+    <div class="photo-page active"><img src="images/dyandra.jpg" alt="Dyandra 1" /></div>
+    <div class="photo-page"><img src="images/Photois_87202410251539.jpg" alt="Dyandra 2" /></div>
+    <div class="photo-page"><img src="images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg" alt="Dyandra 3" /></div>
+    <div class="photo-page"><img src="images/20250510_160406_214.jpg" alt="Dyandra 6" /></div>
+    <div class="photo-page"><img src="images/Photois_87202412242050.jpg" alt="Dyandra 4" /></div>
+    <div class="photo-page"><img src="images/20250215_190233_385.jpg" alt="Dyandra 5" /></div>
+  </div>
 
-  <!-- Galeri Foto Scroll Vertikal -->
-  <div class="photo"><img src="images/dyandra.jpg" alt="Foto 1 Dyandra" /></div>
-  <div class="photo"><img src="images/Photois_87202410251539.jpg" alt="Foto 2 Dyandra" /></div>
-  <div class="photo"><img src="images/WhatsApp Image 2024-11-16 at 09.44.24.jpeg" alt="Foto 3 Dyandra" /></div>
-  <div class="photo"><img src="images/20250510_160406_214.jpg" alt="Foto 4 Dyandra" /></div>
-  <div class="photo"><img src="images/Photois_87202412242050.jpg" alt="Foto 5 Dyandra" /></div>
-  <div class="photo"><img src="images/20250215_190233_385.jpg" alt="Foto 6 Dyandra" /></div>
+  <div class="nav-buttons">
+    <button onclick="changePage(-1)">Previous</button>
+    <button onclick="changePage(1)">Next</button>
+  </div>
 
-  <!-- Kontrol Musik -->
   <div class="music-controls">
     <audio id="bg-music" loop>
       <source src="music/ssstik.io_1737873366668.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-    <button onclick="document.getElementById('bg-music').play()">Putar Musik</button>
-    <button onclick="document.getElementById('bg-music').pause()">Pause Musik</button>
+    <button onclick="document.getElementById('bg-music').play()">Play Music</button>
+    <button onclick="document.getElementById('bg-music').pause()">Pause Music</button>
   </div>
 
   <footer>
     <div class="footer-message">
-      "Kamu selalu indah, sekeren apapun dunia ini. 🩷"
+      "With you, every moment feels like a beautiful eternity. 💕"
     </div>
   </footer>
 
+  <div class="hearts">
+    <div class="heart" style="left: 10%; font-size: 1.5em; animation-duration: 8s;">💗</div>
+    <div class="heart" style="left: 20%; font-size: 1em; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 30%; font-size: 2em; animation-duration: 10s;">🌹</div>
+    <div class="heart" style="left: 40%; font-size: 1.2em; animation-duration: 7s;">💖</div>
+    <div class="heart" style="left: 50%; font-size: 1.6em; animation-duration: 9s;">💗</div>
+    <div class="heart" style="left: 60%; font-size: 1.4em; animation-duration: 11s;">🍭</div>
+    <div class="heart" style="left: 70%; font-size: 1.1em; animation-duration: 5s;">🍭</div>
+    <div class="heart" style="left: 80%; font-size: 1.8em; animation-duration: 12s;">🌹</div>
+    <div class="heart" style="left: 90%; font-size: 1.2em; animation-duration: 6s;">💐</div>
+  </div>
+
+  <script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.photo-page');
+
+    function changePage(direction) {
+      pages[currentPage].classList.remove('active');
+      currentPage = (currentPage + direction + pages.length) % pages.length;
+      pages[currentPage].classList.add('active');
+    }
+  </script>
 </body>
 </html>
